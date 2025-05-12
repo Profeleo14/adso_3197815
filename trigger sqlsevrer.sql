@@ -5,12 +5,12 @@ CREATE TABLE Productos (
 );
 
 INSERT INTO Productos (id_producto, nombre, stock) VALUES
-(1, 'Aceite de motor', 100),
+(1, 'Aceite de motor', 70),
 (2, 'Filtro de aire', 50),
 (3, 'Batería', 30);
 
 CREATE TABLE Ventas (
-    id_venta INT PRIMARY KEY IDENTITY,
+    id_venta INT PRIMARY KEY IDENTITY(1,1),
     id_producto INT,
     cantidad INT,
     fecha DATETIME 
@@ -34,5 +34,3 @@ BEGIN
 END;
 
 INSERT INTO Ventas (id_producto, cantidad, fecha) VALUES (1, 5, GETDATE());
-
-SELECT * FROM Productos;
